@@ -1,3 +1,19 @@
+# Źródła użyte do przygotowania programu
+# https://forbot.pl/forum/topic/3723-algorytmy-pid-w-robotyce-amatorskiej-linefollower-cz1-czlon-p/
+#
+# Opis budowy robotów LF
+# https://forbot.pl/blog/kurs-budowy-robotow-line-follower-czyli-bolid-f1-id19363
+#
+#   Sterowanie:
+#   Naciśniecię myszy spowoduje rozpoczęcie rysowania linij, zwolnienie przycisku automatycznie ustawi robota na starcie i uruchomi go
+#   robotem można sterować też za pomocą strzałek
+#   Klawisze 1,2,3 zmieniają typ robota
+#   1 - robot z algorytmem śledzenia krawędzi, i jednym detektorem
+#   2 - robot z algorytmem śledzenia linij i dwoma detektorami
+#   3 - robot z algorytmem PD steerowania linij i 7 detektorami
+
+
+
 import pygame
 from Car import Car
 from Car2 import Car2
@@ -68,8 +84,6 @@ while not done:  # pętla główna programu
                 car.forward(10)
             if event.key == pygame.K_DOWN:
                 car.forward(-10)
-            if event.key == pygame.K_p:
-                car.print(screen)
             if event.key == pygame.K_1:
                 car = Car()
                 line_width = 10
